@@ -7,7 +7,7 @@ RUN yum -y install epel-release -y && \
 RUN git clone https://github.com/retspen/webvirtmgr /webvirtmgr
 WORKDIR /webvirtmgr
 RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple numpy==1.16.0
 ADD local_settings.py /webvirtmgr/webvirtmgr/local/local_settings.py
 RUN /usr/bin/python /webvirtmgr/manage.py collectstatic --noinput
 
